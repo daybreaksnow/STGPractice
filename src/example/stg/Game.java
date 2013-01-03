@@ -6,12 +6,19 @@ public class Game {
 
 	public void move() {
 		// TODO プレイヤーの移動、敵の生成、衝突判定など
-		System.out.println("move");
+		KeyManager.getInstance().update();
+		if (KeyManager.getInstance().isKeyPressed(Key.SHOT)) {
+			System.out.println("shot key pressed");
+		}
+		if (KeyManager.getInstance().isKeyPressedNow(Key.SHOT)) {
+			System.out.println("shot key pressed now");
+		}
+		// System.out.println("move");
 	}
 
 	public void draw(Graphics g) {
 		// TODO 画面のクリア、オブジェクトの描画
-		System.out.println("draw");
+		// System.out.println("draw");
 	}
 
 	public int getWidth() {

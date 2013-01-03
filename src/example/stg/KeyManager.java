@@ -32,11 +32,12 @@ public class KeyManager {
 		this.holder = holder;
 	}
 
-	public boolean isPressed(Key key) {
+	public boolean isKeyPressed(Key key) {
 		return keyPressed.contains(key.getKeyCode());
 	}
 
-	public boolean isKeyPressedNow(int keyCode) {
+	public boolean isKeyPressedNow(Key key) {
+		int keyCode = key.getKeyCode();
 		return !prevKeyPressed.contains(keyCode)
 				&& keyPressed.contains(keyCode);
 	}
