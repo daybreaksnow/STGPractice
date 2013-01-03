@@ -6,6 +6,9 @@ import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+/**
+ * AWTに依存したキー入力受付クラス。
+ */
 public class KeyHolder extends KeyAdapter {
 	private Set<Integer> keyPressed = new LinkedHashSet<Integer>();
 

@@ -3,6 +3,9 @@ package example.stg;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+/**
+ * キー入力を管理します。
+ */
 public class KeyManager {
 	private static KeyManager instance;
 
@@ -29,8 +32,8 @@ public class KeyManager {
 		this.holder = holder;
 	}
 
-	public boolean isPressed(int keyCode) {
-		return keyPressed.contains(keyCode);
+	public boolean isPressed(Key key) {
+		return keyPressed.contains(key.getKeyCode());
 	}
 
 	public boolean isKeyPressedNow(int keyCode) {
