@@ -4,21 +4,23 @@ import java.awt.Graphics;
 
 public class Game {
 
+	private Player player;
+
+	public Game() {
+		ImageManager imageManager = ImageManager.getInstance();
+		imageManager.load("player");
+		player = new Player(imageManager.get("player"));
+	}
+
 	public void move() {
 		// TODO プレイヤーの移動、敵の生成、衝突判定など
 		KeyManager.getInstance().update();
-		if (KeyManager.getInstance().isKeyPressed(Key.SHOT)) {
-			System.out.println("shot key pressed");
-		}
-		if (KeyManager.getInstance().isKeyPressedNow(Key.SHOT)) {
-			System.out.println("shot key pressed now");
-		}
-		// System.out.println("move");
+		player.move();
 	}
 
 	public void draw(Graphics g) {
 		// TODO 画面のクリア、オブジェクトの描画
-		// System.out.println("draw");
+		player.draw(g);
 	}
 
 	public int getWidth() {
